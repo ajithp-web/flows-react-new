@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap');
+
+$e-font-family-base: 'Urbanist', sans-serif;
+
+.e-hero-text h1,
+.e-features-header h2,
+.e-cta-title,
+.e-feature-card h5 {
+  font-family: $e-font-family-base;
+  letter-spacing: 0.007em;
+}
+
+.e-hero-desc,
+.e-features-header p,
+.e-feature-card p {
+  font-family: $e-font-family-base;
+  letter-spacing: 0.007em;
+}

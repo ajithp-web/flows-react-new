@@ -17,31 +17,115 @@ $e-bp-lg: 992px;
   }
   .e-cta-section .e-cta-card {
     padding: 3.125rem 2.1875rem !important;
-    .e-cta-graphic { display: none; }
-    .e-cta-title { font-size: 1.625rem !important; line-height: 2.375rem !important; }
-    .e-cta-subtitle { font-size: 1.125rem !important; }
+    .e-cta-graphic {
+      display: none;
+    }
+    .e-cta-title {
+      font-size: 1.625rem !important;
+      line-height: 2.375rem !important;
+    }
+    .e-cta-subtitle {
+      font-size: 1.125rem !important;
+    }
   }
 }
 
 @media (max-width: $e-bp-sm) {
   // Hero
-  .e-hero-section { min-height: 100vw !important; padding-bottom: 2.5rem; }
-  .e-hero-content { height: auto; padding-top: 2.5rem !important; padding-bottom: 2.5rem; }
-  .e-hero-text h1 { font-size: 1.875rem !important; line-height: 2.25rem !important; width: auto; }
-  
+  .e-hero-section {
+    min-height: 100vw !important;
+    padding-bottom: 2.5rem;
+  }
+  .e-hero-content {
+    height: auto;
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem;
+  }
+  .e-hero-text h1 {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
+    width: auto;
+  }
+
   // Icons
-  .e-call-icon, .e-call-icon-white { width: 1rem !important; height: 1rem !important; }
+  .e-call-icon,
+  .e-call-icon-white {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
 
   // Features
-  .e-features-section { padding: 3.75rem 0 !important; }
-  .e-features-header { margin-bottom: 2rem !important; padding: 0 1.25rem; h2 { font-size: 1.75rem !important; line-height: 2.125rem !important; } }
-  .e-features-tabs { justify-content: flex-start !important; padding: 0 1.25rem !important; margin: 2rem 0 2.5rem !important; li { font-size: 0.875rem !important; padding: 0 1rem !important; &.e-active { font-size: 0.875rem !important; } } }
-  .e-feature-cards { grid-template-columns: 1fr !important; gap: 1.5rem !important; padding: 0 1.25rem; max-width: 100% !important; .e-feature-card { width: 100% !important; height: auto !important; min-height: 12rem; } }
+  .e-features-section {
+    padding: 3.75rem 0 !important;
+  }
+  .e-features-header {
+    margin-bottom: 2rem !important;
+    padding: 0 1.25rem;
+    h2 {
+      font-size: 1.75rem !important;
+      line-height: 2.125rem !important;
+    }
+  }
+  .e-features-tabs {
+    justify-content: flex-start !important;
+    padding: 0 1.25rem !important;
+    margin: 2rem 0 2.5rem !important;
+    li {
+      font-size: 0.875rem !important;
+      padding: 0 1rem !important;
+      &.e-active {
+        font-size: 0.875rem !important;
+      }
+    }
+  }
+  .e-feature-cards {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 0 1.25rem;
+    max-width: 100% !important;
+    .e-feature-card {
+      width: 100% !important;
+      height: auto !important;
+      min-height: 12rem;
+    }
+  }
 
   // CTA
-  .e-cta-section { padding: 3.125rem 0 !important; }
-  .e-cta-card { padding: 2.5rem 1.5rem !important; border-radius: 1rem !important; margin: 0 1.25rem !important; max-width: calc(100% - 2.5rem) !important; .e-cta-title { font-size: 1.375rem !important; line-height: 2rem !important; margin-bottom: 0.75rem !important; } .e-cta-subtitle { font-size: 1rem !important; margin-bottom: 1.25rem !important; } }
+  .e-cta-section {
+    padding: 3.125rem 0 !important;
+  }
+  .e-cta-card {
+    padding: 2.5rem 1.5rem !important;
+    border-radius: 1rem !important;
+    margin: 0 1.25rem !important;
+    max-width: calc(100% - 2.5rem) !important;
+    .e-cta-title {
+      font-size: 1.375rem !important;
+      line-height: 2rem !important;
+      margin-bottom: 0.75rem !important;
+    }
+    .e-cta-subtitle {
+      font-size: 1rem !important;
+      margin-bottom: 1.25rem !important;
+    }
+  }
 
   // Footer
-  .e-finvesto-footer { padding: 3.125rem 0 2.5rem !important; .e-section-inner { padding: 0 1.25rem; } .e-footer-left { margin-bottom: 2.5rem; } .e-contact-row { flex-direction: column; align-items: flex-start !important; gap: 0.75rem !important; .e-divider { display: none; } } }
+  .e-finvesto-footer {
+    padding: 3.125rem 0 2.5rem !important;
+    .e-section-inner {
+      padding: 0 1.25rem;
+    }
+    .e-footer-left {
+      margin-bottom: 2.5rem;
+    }
+    .e-contact-row {
+      flex-direction: column;
+      align-items: flex-start !important;
+      gap: 0.75rem !important;
+      .e-divider {
+        display: none;
+      }
+    }
+  }
 }

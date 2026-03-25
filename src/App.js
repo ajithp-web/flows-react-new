@@ -1,34 +1,33 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import './Styles/global.scss'; 
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "./Styles/global.scss";
 
-
-
-import sipIcon from './Assets/sip.png';
-import callIcon from './Assets/call_icon.png';
-import vectorIcon from './Assets/Vector.png';
-import ctaImage from './Assets/cta-image.png';
-import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
+import sipIcon from "./Assets/sip.png";
+import callIcon from "./Assets/call_icon.png";
+import vectorIcon from "./Assets/Vector.png";
+import ctaImage from "./Assets/cta-image.png";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import Button from "./Components/Button/Button";
 
 const tabs = [
-  'Customer management',
-  'Financial planning',
-  'Customer engagement',
-  'Communication tools',
+  "Customer management",
+  "Financial planning",
+  "Customer engagement",
+  "Communication tools",
 ];
 
 const featureCards = [
-  { icon: sipIcon, title: 'User Management' },
-  { icon: sipIcon, title: 'Sub-user management' },
-  { icon: sipIcon, title: 'Goal planning' },
-  { icon: sipIcon, title: 'Investment options' },
-  { icon: sipIcon, title: 'Portfolio tracking' },
-  { icon: sipIcon, title: 'Smart analytics' },
-  { icon: sipIcon, title: 'Tax management' },
-  { icon: sipIcon, title: 'Reports' },
-  { icon: sipIcon, title: 'Support' },
+  { icon: sipIcon, title: "User Management" },
+  { icon: sipIcon, title: "Sub-user management" },
+  { icon: sipIcon, title: "Goal planning" },
+  { icon: sipIcon, title: "Investment options" },
+  { icon: sipIcon, title: "Portfolio tracking" },
+  { icon: sipIcon, title: "Smart analytics" },
+  { icon: sipIcon, title: "Tax management" },
+  { icon: sipIcon, title: "Reports" },
+  { icon: sipIcon, title: "Support" },
 ];
 
 function App() {
@@ -51,10 +50,11 @@ function App() {
                 insights for smarter, more strategic investments.
               </p>
 
-              <button className="e-book-btn">
-                Book a call modal
-                <img src={callIcon} className="e-call-icon" alt="call" />
-              </button>
+              <Button
+                text="Book a call modal"
+                icon={callIcon}
+                className="e-book-btn"
+              />
             </div>
           </div>
         </div>
@@ -71,33 +71,32 @@ function App() {
             </h2>
 
             <p>
-              Effortlessly navigate the world of mutual fund investments with our
-              innovative platform with cutting-edge tools and insights for
+              Effortlessly navigate the world of mutual fund investments with
+              our innovative platform with cutting-edge tools and insights for
               smarter, more strategic investments.
             </p>
 
-            <button className="e-expert-btn">
-              Talk to an expert
-              <img src={vectorIcon} className="e-call-icon-white" alt="arrow" />
-            </button>
+            <Button
+              text="Talk to an expert"
+              icon={vectorIcon}
+              className="e-expert-btn"
+            />
           </div>
 
           {/* TABS */}
           <div className="e-features-tabs-wrapper">
             <ul className="e-features-tabs">
               {tabs.map((tab, index) => (
-                <React.Fragment key={tab}>
+                <div key={tab}>
                   <li
-                    className={activeTab === index ? 'e-active' : ''}
+                    className={activeTab === index ? "e-active" : ""}
                     onClick={() => setActiveTab(index)}
                   >
                     {tab}
                   </li>
 
-                  {index < tabs.length - 1 && (
-                    <li className="e-divider"></li>
-                  )}
-                </React.Fragment>
+                  {index < tabs.length - 1 && <li className="e-divider"></li>}
+                </div>
               ))}
             </ul>
           </div>
@@ -114,7 +113,8 @@ function App() {
 
                 <p>
                   We design APIs keeping both, the customer and the end user in
-                  mind. This customer first approach. This customer first approach.
+                  mind. This customer first approach. This customer first
+                  approach.
                 </p>
               </div>
             ))}
@@ -137,10 +137,11 @@ function App() {
                   Transforming finance one connection at a time
                 </p>
 
-                <button className="e-cta-btn">
-                  Schedule a call
-                  <img src={callIcon} className="e-call-icon" alt="call" />
-                </button>
+                <Button
+                  text="Schedule a call"
+                  icon={callIcon}
+                  className="e-cta-btn"
+                />
               </div>
             </div>
 

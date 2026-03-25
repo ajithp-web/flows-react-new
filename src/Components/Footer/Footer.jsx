@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import logo from '../../Assets/logo.png';
-import callBlack from '../../Assets/call-black.png';
-import mailIcon from '../../Assets/mail.png';
-import phoneIcon from '../../Assets/phone.png';
+import logo from "../../Assets/logo.png";
+import callBlack from "../../Assets/call-black.png";
+import mailIcon from "../../Assets/mail.png";
+import phoneIcon from "../../Assets/phone.png";
+import Button from "../Button/Button";
 
 const Footer = () => {
   return (
     <footer className="e-finvesto-footer">
       <div className="e-section-inner">
         <div className="row">
-
           {/* LEFT COLUMN */}
           <div className="col-lg-5 e-footer-left">
             <img src={logo} className="e-footer-logo" alt="Finvesto" />
@@ -20,10 +20,11 @@ const Footer = () => {
               mind. This customer first approach
             </p>
 
-            <button className="e-expert-btn-footer">
-              Talk to an expert
-              <img src={callBlack} className="e-call-icon" alt="call" />
-            </button>
+            <Button
+              text="Talk to an expert"
+              icon={callBlack}
+              className="e-expert-btn-footer"
+            />
 
             <div className="e-contact-title mt-4">Contact Investo team</div>
 
@@ -69,7 +70,6 @@ const Footer = () => {
               <li>Terms and conditions</li>
             </ul>
           </div>
-
         </div>
       </div>
     </footer>

@@ -66,9 +66,9 @@ function App() {
       </header>
 
       {/* FEATURES SECTION */}
-      <section className="e-features-section">
-        <div className="container">
-          <div className="e-features-header text-center">
+      <section className = "e-features-section">
+        <div className = "container">
+          <div className = "e-features-header text-center">
             <h2>
               Explore our comprehensive
               <br />
@@ -80,7 +80,7 @@ function App() {
               our innovative platform with cutting-edge tools and insights for
               smarter, more strategic investments.
             </p>
-
+                  
             <Button
               text="Talk to an expert"
               icon={vectorIcon}

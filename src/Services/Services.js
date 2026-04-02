@@ -1,7 +1,4 @@
-// src/api/service.js
-
 // GET ALL FEATURE CARDS
-// src/Services/Services.js
 import axios from "axios";
 
 const API_URL = "http://localhost:1337";

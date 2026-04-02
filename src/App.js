@@ -1,37 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./Styles/global.scss";
 
-import sipIcon from "./Assets/sip.png";
+import sipIcon from "./Assets/sip.png"; // fallback icon if needed
 import callIcon from "./Assets/call_icon.png";
 import vectorIcon from "./Assets/Vector.png";
 import ctaImage from "./Assets/cta-image.png";
+
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Button from "./Components/Button/Button";
-
-const tabs = [
-  "Customer management",
-  "Financial planning",
-  "Customer engagement",
-  "Communication tools",
-];
-
-const featureCards = [
-  { icon: sipIcon, title: "User Management" },
-  { icon: sipIcon, title: "Sub-user management" },
-  { icon: sipIcon, title: "Goal planning" },
-  { icon: sipIcon, title: "Investment options" },
-  { icon: sipIcon, title: "Portfolio tracking" },
-  { icon: sipIcon, title: "Smart analytics" },
-  { icon: sipIcon, title: "Tax management" },
-  { icon: sipIcon, title: "Reports" },
-  { icon: sipIcon, title: "Support" },
-];
+import { getFeatureCards, getFeatureTabs } from "./Services";
 
 function App() {
   const [activeTab, setActiveTab] = useState(0);
+  const [featureCards, setFeatureCards] = useState([]);
+  const [feaureTabs, setFeaureTabs] = useState([]);
+
+  // Fetch feature cards on component mount
+  useEffect(() => {
+    async function fetchFeatureCards() {
+      const tabs = await getFeatureTabs();
+      const cards = await getFeatureCards();
+      console.log(cards, "cards", tabs);
+
+      const formattedCards = cards.map((card) => ({
+        icon: sipIcon,
+        title: card?.title,
+        description: card?.description || "No description provided",
+      }));
+      setFeatureCards(formattedCards);
+      setFeaureTabs(tabs);
+    }
+    fetchFeatureCards();
+  }, []);
+
+  console.log(featureCards, "featureCards");
 
   return (
     <div>
@@ -86,17 +91,18 @@ function App() {
           {/* TABS */}
           <div className="e-features-tabs-wrapper">
             <ul className="e-features-tabs">
-              {tabs.map((tab, index) => (
-                <div key={tab}>
+              {feaureTabs?.map((tab, index) => (
+                <React.Fragment key={tab.id}>
                   <li
                     className={activeTab === index ? "e-active" : ""}
                     onClick={() => setActiveTab(index)}
                   >
-                    {tab}
+                    {tab.tabname}{" "}
                   </li>
-
-                  {index < tabs.length - 1 && <li className="e-divider"></li>}
-                </div>
+                  {index < feaureTabs.length - 1 && (
+                    <li className="e-divider"></li>
+                  )}
+                </React.Fragment>
               ))}
             </ul>
           </div>
@@ -111,11 +117,7 @@ function App() {
 
                 <h5>{card.title}</h5>
 
-                <p>
-                  We design APIs keeping both, the customer and the end user in
-                  mind. This customer first approach. This customer first
-                  approach.
-                </p>
+                <p>{card.description}</p>
               </div>
             ))}
           </div>
